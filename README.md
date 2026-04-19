@@ -1,14 +1,14 @@
 <div align="center">
 
-![AyuSphere Banner](file:///C:/Users/tella/.gemini/antigravity/brain/01406f53-aeca-4da8-aa5b-a1e0e704466c/ayusphere_banner_1776567941533.png)
+![AyuSphere Colorful Banner](file:///C:/Users/tella/.gemini/antigravity/brain/01406f53-aeca-4da8-aa5b-a1e0e704466c/ayusphere_colorful_banner_1776568107642.png)
 
 # 🏥 AYUSPHERE
-### Premium Digital Healthcare Infrastructure • Cardiac Triage • Clinical AI
+### Premium Digital Healthcare • Cardiac Triage • Neon Clinical AI
 
-[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)](https://react.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![Next.js](https://img.shields.io/badge/Next.js-15-00f2ff?style=for-the-badge&logo=next.js&logoColor=black)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-7000ff?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-ff007a?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-00f2ff?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 ---
 

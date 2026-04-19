@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;600;800&display=swap');
 
 :root {
-  --bg-color: #f7f6f2; /* Silk Beige */
-  --text-color: #121212; /* Rich Obsidian */
-  --text-soft: #63635e; /* Muted Stone */
-  --primary: #121212; 
-  --accent: #d4a373; /* Subtle Gold/Earth tone */
-  --glass: rgba(255, 255, 255, 0.4);
-  --glass-border: rgba(0, 0, 0, 0.04);
-  --card-shadow: 0 10px 40px -10px rgba(0,0,0,0.05);
-  --silk-shadow: 0 30px 60px -12px rgba(0,0,0,0.08), 0 18px 36px -18px rgba(0,0,0,0.1);
+  --bg-color: #050505; /* Deep Space Black */
+  --text-color: #ffffff; /* Pure White */
+  --text-soft: #a0a0a0; /* Muted Silver */
+  --primary: #00f2ff; /* Electric Cyan */
+  --secondary: #7000ff; /* Neon Purple */
+  --accent: #ff007a; /* Pulse Pink */
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --card-shadow: 0 10px 40px -10px rgba(0,242,255,0.15);
+  --silk-shadow: 0 30px 60px -12px rgba(112,0,255,0.2), 0 18px 36px -18px rgba(255,0,122,0.2);
   --section-padding: 8rem;
 }
 
@@ -24,9 +25,9 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   overflow-x: hidden;
-  line-height: 1.8; /* Increased for breathing room */
+  line-height: 1.8;
   -webkit-font-smoothing: antialiased;
-  letter-spacing: 0.01rem; /* Added default spacing */
+  letter-spacing: 0.01rem;
 }
 
 /* Luxury Scaffolding */
@@ -58,7 +59,17 @@ section {
   right: -10%;
   width: 1200px;
   height: 1200px;
-  background: radial-gradient(circle, #e9e5d9 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(112,0,255,0.15) 0%, transparent 70%);
+  filter: blur(120px);
+}
+
+.glow-2 {
+  position: absolute;
+  bottom: -20%;
+  left: -10%;
+  width: 1000px;
+  height: 1000px;
+  background: radial-gradient(circle, rgba(255,0,122,0.1) 0%, transparent 70%);
   filter: blur(120px);
 }
 
@@ -81,9 +92,10 @@ h1, h2, h3 {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #121212 0%, #63635e 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 
 /* Components */
@@ -91,14 +103,14 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 2rem 4rem;
+  padding: 1.5rem 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  background: rgba(247, 246, 242, 0.7);
-  backdrop-filter: blur(30px);
-  border-bottom: 1px solid rgba(0,0,0,0.03);
+  background: rgba(5, 5, 5, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .logo {
@@ -111,27 +123,30 @@ nav {
 }
 
 .logo-dot {
-  width: 6px;
-  height: 6px;
-  background: #111;
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
   border-radius: 50%;
+  box-shadow: 0 0 15px var(--primary);
 }
 
 .luxury-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.03);
   padding: 4rem;
-  border: 1px solid rgba(0,0,0,0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
   box-shadow: var(--card-shadow);
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .luxury-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--silk-shadow);
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--primary);
+  box-shadow: 0 20px 50px -10px rgba(0,242,255,0.3);
 }
 
 .btn-luxury {
-  background: #111;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: white;
   padding: 1.2rem 3rem;
   text-decoration: none;
@@ -141,13 +156,14 @@ nav {
   text-transform: uppercase;
   display: inline-block;
   transition: all 0.4s ease;
-  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px -5px rgba(0,242,255,0.4);
 }
 
 .btn-luxury:hover {
-  background: transparent;
-  color: #111;
-  border-color: #111;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px -5px rgba(112,0,255,0.5);
+  filter: brightness(1.1);
 }
 
 .btn-outline {
