@@ -1,14 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;600;800&display=swap');
 
 :root {
-  --bg-color: #05070a;
-  --text-color: #f8fafc;
-  --primary: #20c997;
-  --primary-glow: rgba(32, 201, 151, 0.3);
-  --secondary: #3b82f6;
-  --danger: #ef4444;
-  --glass: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.08);
+  --bg-color: #f7f6f2; /* Silk Beige */
+  --text-color: #121212; /* Rich Obsidian */
+  --text-soft: #63635e; /* Muted Stone */
+  --primary: #121212; 
+  --accent: #d4a373; /* Subtle Gold/Earth tone */
+  --glass: rgba(255, 255, 255, 0.4);
+  --glass-border: rgba(0, 0, 0, 0.04);
+  --card-shadow: 0 10px 40px -10px rgba(0,0,0,0.05);
+  --silk-shadow: 0 30px 60px -12px rgba(0,0,0,0.08), 0 18px 36px -18px rgba(0,0,0,0.1);
+  --section-padding: 8rem;
 }
 
 * {
@@ -22,10 +24,24 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   overflow-x: hidden;
-  line-height: 1.6;
+  line-height: 1.8; /* Increased for breathing room */
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.01rem; /* Added default spacing */
 }
 
-/* Background Background Glows */
+/* Luxury Scaffolding */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+section {
+  padding: var(--section-padding) 0;
+  position: relative;
+}
+
+/* Background Art */
 .bg-glow {
   position: fixed;
   top: 0;
@@ -33,152 +49,228 @@ body {
   width: 100%;
   height: 100%;
   z-index: -1;
-  overflow: hidden;
+  pointer-events: none;
 }
 
 .glow-1 {
   position: absolute;
-  top: -10%;
+  top: -20%;
   right: -10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
-  filter: blur(80px);
+  width: 1200px;
+  height: 1200px;
+  background: radial-gradient(circle, #e9e5d9 0%, transparent 70%);
+  filter: blur(120px);
 }
 
-.glow-2 {
-  position: absolute;
-  bottom: -10%;
-  left: -10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
-  filter: blur(80px);
+/* Premium Typography */
+h1, h2, h3 {
+  font-weight: 300;
+  letter-spacing: -0.02em; /* Relaxed from aggressive negative spacing */
+  line-height: 1.1;
+  text-transform: uppercase;
 }
 
-/* Typography */
-h1 {
-  font-size: clamp(3rem, 10vw, 6rem);
-  font-weight: 800;
-  letter-spacing: -2px;
-  background: linear-gradient(135deg, #fff 0%, #a5f3fc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 1;
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.4em; /* Increased for premium feel */
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 2rem;
+  display: block;
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  background: linear-gradient(135deg, #121212 0%, #63635e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Glassmorphism */
-.glass-card {
-  background: var(--glass);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
-  border-radius: 24px;
-  padding: 2.5rem;
-  transition: all 0.3s ease;
-}
-
-.glass-card:hover {
-  transform: translateY(-10px);
-  border-color: rgba(32, 201, 151, 0.3);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-}
-
-/* Animations */
-@keyframes pulse-wave {
-  0% { transform: scaleX(1); opacity: 0.3; }
-  50% { transform: scaleX(1.1); opacity: 0.6; }
-  100% { transform: scaleX(1); opacity: 0.3; }
-}
-
-.pulse-line {
-  height: 2px;
-  width: 100%;
-  background: linear-gradient(90deg, transparent, var(--danger), transparent);
-  animation: pulse-wave 2s infinite ease-in-out;
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: reveal 0.8s forwards ease-out;
-}
-
-@keyframes reveal {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Layout Utilities */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-section {
-  padding: 6rem 0;
-}
-
-/* Grid */
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 4rem;
-}
-
-/* Nav Placeholder for smooth feel */
+/* Components */
 nav {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 1.5rem 2rem;
+  padding: 2rem 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 100;
-  background: rgba(5, 7, 10, 0.8);
-  backdrop-filter: blur(10px);
+  z-index: 1000;
+  background: rgba(247, 246, 242, 0.7);
+  backdrop-filter: blur(30px);
+  border-bottom: 1px solid rgba(0,0,0,0.03);
 }
 
 .logo {
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
 }
 
 .logo-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--primary);
+  width: 6px;
+  height: 6px;
+  background: #111;
   border-radius: 50%;
-  box-shadow: 0 0 10px var(--primary);
 }
 
-/* Footer / Team */
-.team-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-top: 2rem;
+.luxury-card {
+  background: white;
+  padding: 4rem;
+  border: 1px solid rgba(0,0,0,0.03);
+  box-shadow: var(--card-shadow);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.team-badge {
-  background: rgba(32, 201, 151, 0.1);
-  border: 1px solid rgba(32, 201, 151, 0.2);
-  color: var(--primary);
-  padding: 0.5rem 1rem;
-  border-radius: 100px;
+.luxury-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--silk-shadow);
+}
+
+.btn-luxury {
+  background: #111;
+  color: white;
+  padding: 1.2rem 3rem;
+  text-decoration: none;
   font-size: 0.9rem;
   font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: all 0.4s ease;
+  border: 1px solid transparent;
+}
+
+.btn-luxury:hover {
+  background: transparent;
+  color: #111;
+  border-color: #111;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #111;
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 1.2rem 3rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: all 0.4s ease;
+}
+
+.btn-outline:hover {
+  background: #111;
+  color: white;
+  border-color: #111;
+}
+
+/* Grid Utilities */
+.asymmetric-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+/* Pricing Grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.pricing-item {
+  padding: 4rem 3rem;
+  border: 1px solid rgba(0,0,0,0.05);
+  background: white;
+  transition: all 0.5s ease;
+}
+
+.pricing-item.featured {
+  background: #111;
+  color: white;
+}
+
+.pricing-item.featured .price span {
+  color: #888;
+}
+
+.price {
+  font-size: 4rem;
+  font-weight: 200;
+  margin: 1.5rem 0;
+  letter-spacing: -1px;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.tech-tag {
+  padding: 1rem;
+  background: white;
+  border: 1px solid rgba(0,0,0,0.03);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: #888;
+  text-align: center;
+}
+
+.persona-card {
+  padding: 4rem;
+  border: 1px solid #f0f0eb;
+  background: white;
+  transition: all 0.5s ease;
+}
+
+.persona-card:hover {
+  border-color: #d4a373;
+}
+
+.financial-stat {
+  padding: 3rem;
+  border-right: 1px solid rgba(0,0,0,0.05);
+}
+
+.financial-stat:last-child {
+  border-right: none;
+}
+
+.price span {
+  font-size: 1.2rem;
+  color: #999;
+}
+
+/* Animations */
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  animation: reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Helper Classes */
+.mt-4 { margin-top: 4rem; }
+.mb-2 { margin-bottom: 2rem; }
+.text-soft { color: var(--text-soft); }
+
+@media (max-width: 1024px) {
+  .asymmetric-grid, .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .container { padding: 0 2rem; }
 }
